@@ -101,7 +101,7 @@ bool airplane_launch(Queue *queue){
 
 // Pausa até que um botão seja pressionado.
 void pause(void){
-    printf("\nPressione uma tecla para continuar...");
+    printf("\nPressione enter para continuar...");
     getchar();
 }
 
@@ -173,6 +173,12 @@ void main(void){
 
             case 0:
                 return;
+
+            default:
+                clean_screen;
+                printf("Opção inválida, tente novamente!");
+                pause();
+                break;
         }
     }
 }
