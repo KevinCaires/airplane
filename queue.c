@@ -56,6 +56,14 @@ void show_queue(Queue *queue){
     printf("\n");
 }
 
+// Mostra apenas o primeiro avião na fila.
+void show_first_in_queue(Queue *queue){
+    Element *element = queue->start;
+
+    printf("Primeiro da listar de decolagem:\n");
+    printf("[%s]\n", element->airplane.airplane);
+}
+
 // Insere um item na fila.
 bool insert_in_queue(Queue *queue, Airplane plane){
     Element *element = (Element*)malloc(sizeof(Element));
@@ -142,7 +150,13 @@ void main(void){
             show_queue(queue);
             pause();
             break;
-        
+
+        case 4:
+            clean_screen;
+            show_first_in_queue(queue);
+            pause();
+            break;
+
         case 5:
             clean_screen;
             printf("Total: [%d]", queue_lenght(queue));
