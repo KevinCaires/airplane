@@ -11,6 +11,7 @@ typedef int bool;
 
 typedef struct{
     char *airplane;
+    char *type;
 } Airplane;
 
 typedef struct ELEMENT{
@@ -50,7 +51,7 @@ void show_queue(Queue *queue){
     printf("Fila de decolagem:\n\n");
     while(element != NULL){
         position++;
-        printf("[%i]\t[%s]\n", position, element->airplane.airplane);
+        printf("[%i]\t[%s-%s]\n", position, element->airplane.airplane, element->airplane.type);
         element = element->next;
     }
     printf("\n");
@@ -61,7 +62,7 @@ void show_first_in_queue(Queue *queue){
     Element *element = queue->start;
 
     printf("Primeiro da listar de decolagem:\n");
-    printf("[%s]\n", element->airplane.airplane);
+    printf("[%s-%s]\n", element->airplane.airplane, element->airplane.type);
 }
 
 // Insere um item na fila.
@@ -92,7 +93,7 @@ bool airplane_launch(Queue *queue){
     Element *launch = queue->start;
     queue->start = queue->start->next;
 
-    printf("Aviao [%s] lancado!", launch->airplane.airplane);
+    printf("Avião [%s-%s] lançado!", launch->airplane.airplane, launch->airplane.type);
     free(launch);
 
     return true;
@@ -128,13 +129,20 @@ void main(void){
             case 1:
                 clean_screen;
                 plane.airplane = (char*)malloc(sizeof(char));
+                plane.type = (char*)malloc(sizeof(char));
+
                 printf("Nome do aviao: ");
                 scanf("%s", plane.airplane);
                 getchar();
+                printf("Tipo do avião: ");
+                scanf("%s", plane.type);
+                getchar();
+
                 if(insert_in_queue(queue, plane))
                     printf("Inserção realizada com sucesso!");
                 else
                     printf("Não foi possível inserir o avião na fila!");
+
                 pause();
                 break;
 
