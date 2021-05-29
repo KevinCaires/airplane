@@ -92,7 +92,7 @@ bool airplane_launch(Queue *queue){
 
 // Pausa até que um botão seja pressionado.
 void pause(void){
-    printf("Pressione uma tecla para continuar...\n");
+    printf("\nPressione uma tecla para continuar...");
     getchar();
 }
 
@@ -124,6 +124,13 @@ void main(void){
             scanf("%s", plane.airplane);
             getchar();
             insert_in_queue(queue, plane);
+            break;
+
+        case 2:
+            clean_screen;
+            if(!airplane_launch(queue))
+                printf("Não foi possível realizar uma decolagem!");
+            pause();
             break;
 
         case 3:
