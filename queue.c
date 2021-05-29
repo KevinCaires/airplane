@@ -119,7 +119,7 @@ void main(void){
         switch (option){
         case 1:
             clean_screen;
-            plane.airplane = malloc(10);
+            plane.airplane = (char*)malloc(sizeof(char));
             printf("Nome do aviao: ");
             scanf("%s", plane.airplane);
             getchar();
