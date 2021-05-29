@@ -100,7 +100,7 @@ void pause(void){
 void main(void){
     int option;
     Airplane plane;
-    Queue *queue = (Queue*)malloc(sizeof(queue));
+    Queue *queue = (Queue*)malloc(sizeof(Queue));
 
     initialize_queue(queue);
 
