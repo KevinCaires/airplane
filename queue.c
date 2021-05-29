@@ -123,7 +123,11 @@ void main(void){
             printf("Nome do aviao: ");
             scanf("%s", plane.airplane);
             getchar();
-            insert_in_queue(queue, plane);
+            if(insert_in_queue(queue, plane))
+                printf("Inserção realizada com sucesso!");
+            else
+                printf("Não foi possível inserir o avião na fila!");
+            pause();
             break;
 
         case 2:
@@ -136,6 +140,12 @@ void main(void){
         case 3:
             clean_screen;
             show_queue(queue);
+            pause();
+            break;
+        
+        case 5:
+            clean_screen;
+            printf("Total: [%d]", queue_lenght(queue));
             pause();
             break;
 
