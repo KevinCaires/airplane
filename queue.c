@@ -131,7 +131,7 @@ void main(void){
                 plane.airplane = (char*)malloc(sizeof(char));
                 plane.type = (char*)malloc(sizeof(char));
 
-                printf("Nome do aviao: ");
+                printf("Identificação do aviao: ");
                 scanf("%s", plane.airplane);
                 getchar();
                 printf("Tipo do avião: ");
