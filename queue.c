@@ -125,46 +125,46 @@ void main(void){
         getchar();
 
         switch (option){
-        case 1:
-            clean_screen;
-            plane.airplane = (char*)malloc(sizeof(char));
-            printf("Nome do aviao: ");
-            scanf("%s", plane.airplane);
-            getchar();
-            if(insert_in_queue(queue, plane))
-                printf("Inserção realizada com sucesso!");
-            else
-                printf("Não foi possível inserir o avião na fila!");
-            pause();
-            break;
+            case 1:
+                clean_screen;
+                plane.airplane = (char*)malloc(sizeof(char));
+                printf("Nome do aviao: ");
+                scanf("%s", plane.airplane);
+                getchar();
+                if(insert_in_queue(queue, plane))
+                    printf("Inserção realizada com sucesso!");
+                else
+                    printf("Não foi possível inserir o avião na fila!");
+                pause();
+                break;
 
-        case 2:
-            clean_screen;
-            if(!airplane_launch(queue))
-                printf("Não foi possível realizar uma decolagem!");
-            pause();
-            break;
+            case 2:
+                clean_screen;
+                if(!airplane_launch(queue))
+                    printf("Não foi possível realizar uma decolagem!");
+                pause();
+                break;
 
-        case 3:
-            clean_screen;
-            show_queue(queue);
-            pause();
-            break;
+            case 3:
+                clean_screen;
+                show_queue(queue);
+                pause();
+                break;
 
-        case 4:
-            clean_screen;
-            show_first_in_queue(queue);
-            pause();
-            break;
+            case 4:
+                clean_screen;
+                show_first_in_queue(queue);
+                pause();
+                break;
 
-        case 5:
-            clean_screen;
-            printf("Total: [%d]", queue_lenght(queue));
-            pause();
-            break;
+            case 5:
+                clean_screen;
+                printf("Total: [%d]", queue_lenght(queue));
+                pause();
+                break;
 
-        case 0:
-            return;
+            case 0:
+                return;
         }
     }
 }
